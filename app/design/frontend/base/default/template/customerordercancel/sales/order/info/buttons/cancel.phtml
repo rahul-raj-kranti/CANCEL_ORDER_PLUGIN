@@ -1,0 +1,17 @@
+<?php
+/**
+ *
+ * @copyright   Copyright (c) 2013 Kranti (http://www.Kranti.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php $_order = $this->getOrder() ?>
+
+
+<?php if(Mage::helper('customerordercancel')->canCancel($_order)): ?>
+
+	<?php if ($_order->getStatusLabel()=='Pending') : ?>
+    <span class="separator">|</span>
+    <a href="<?php echo $this->getUrl('customerordercancel/order/cancel', array('order_id' => $_order->getId(), '_secure'=>true)) ?>" class="link-reorder"><?php echo $this->__('Cancel Order') ?></a>
+    <?php endif ?>
+<?php endif ?>

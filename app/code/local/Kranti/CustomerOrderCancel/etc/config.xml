@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Kranti_CustomerOrderCancel>
+            <version>1.0.0.0</version>
+        </Kranti_CustomerOrderCancel>
+    </modules>
+    <frontend>
+        <routers>
+            <customerordercancel>
+                <use>standard</use>
+                <args>
+                    <module>Kranti_CustomerOrderCancel</module>
+                    <frontName>customerordercancel</frontName>
+                </args>
+            </customerordercancel>
+        </routers>
+        <layout>
+            <updates>
+                <customerordercancel>
+                    <file>customerordercancel.xml</file>
+                </customerordercancel>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <helpers>
+            <customerordercancel>
+                <class>Kranti_CustomerOrderCancel_Helper</class>
+            </customerordercancel>
+        </helpers>
+    </global>
+
+<global>  
+  <!--  <models>
+        <customerordercancel>
+                <class>Kranti_CustomerOrderCancel_Model</class>
+                <resourceModel>KrantiCustomerOrderCancel_recource</resourceModel>
+        </customerordercancel> -->
+           
+         <!-- The code for the model resources -->
+       <!--  <KrantiCustomerOrderCancel_recource>
+            <class>Kranti_CustomerOrderCancel_Model_Resource</class>
+            <entities>
+                <table_KrantiCustomerOrderCancel>
+                    <table>Kranti_CustomerOrderCancel</table>
+                </table_KrantiCustomerOrderCancel>
+            </entities>
+        </KrantiCustomerOrderCancel_recource>
+    </models> -->
+       <!-- Code for adding tables to the database -->
+       <resources>
+           <customerordercancel_setup>
+               <setup>
+                   <module>Kranti_CustomerOrderCancel</module>
+               </setup>
+<!-- <connection>
+<use>core_setup</use>
+</connection> --> 
+</customerordercancel_setup>
+
+
+<!-- <customerordercancel_write>
+<connection>
+<use>core_write</use>
+</connection>
+</customerordercancel_write>
+
+<customerordercancel_read>
+<connection>
+<use>core_read</use>
+</connection>
+</customerordercancel_read>
+ -->
+
+
+
+           
+       </resources>
+
+ </global>
+
+
+
+</config>
